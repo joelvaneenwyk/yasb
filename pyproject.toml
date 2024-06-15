@@ -1,0 +1,48 @@
+[project]
+name = "yasb"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Joel Van Eenwyk", email = "joel.vaneenwyk@gmail.com" }
+]
+dependencies = [
+    "BlurWindow",
+    "Cerberus",
+    "PyQt6",
+    "PyYAML",
+    "cssutils",
+    "humanize",
+    "psutil",
+    "pytz",
+    "pywin32",
+    "tzlocal",
+    "watchdog",
+    "winsdk",
+]
+readme = "README.md"
+requires-python = ">= 3.11"
+
+[project.scripts]
+yasb = "yasb.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.2.2",
+    "ruff>=0.4.9",
+    "uv>=0.2.11",
+    "pyright>=1.1.367",
+    "mypy>=1.10.0",
+    "pylint>=3.2.3",
+    "pylama>=8.4.1",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/yasb"]
