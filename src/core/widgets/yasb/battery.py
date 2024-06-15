@@ -74,7 +74,7 @@ class BatteryWidget(BaseWidget):
 
         if secs_left == psutil.POWER_TIME_UNLIMITED:
             time_left = "unlimited"
-        elif type(secs_left) == int:
+        elif isinstance(secs_left, int):
             time_left = timedelta(seconds=secs_left)
             time_left = humanize.naturaldelta(time_left) if self._time_remaining_natural else str(time_left)
         else:
